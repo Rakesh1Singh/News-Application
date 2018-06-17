@@ -1,0 +1,31 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="row">
+<div class="col-sm-2">
+<ul class="list-group">
+	<li  class="list-group-item" *ngFor="let item of sectionItem" (click)="loadNews(item)">
+		{{item}}
+	</li>
+</ul>
+</div> 
+<div class="col-sm-10" >
+	<!--<input class="form-control" [(ngModel)]="query" id="myInput" type="text" placeholder="Search for news" > -->
+	<ul class="list-group">
+	
+	<li class="list-group-item" *ngFor = "let i of news">
+		<div>
+		<h2><a href="{{i.url}}" target="_blank">{{i.title}}</a></h2>
+		<p>{{i.abstract}}</p>
+		<p>{{i.created_date | date:"dd MMM ', ' h:mma"}}</p>
+	    </div>
+	</li>
+	</ul>
+</div> 
+</div>
+</body>
+</html>
